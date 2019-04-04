@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "kestrel": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      // You can also use the WebHostBuilder in Program.cs to set the default port.
+      "applicationUrl": "http://localhost:2000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

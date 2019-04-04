@@ -1,0 +1,20 @@
+﻿@page
+@model IndexModel
+
+<!-- Allow me to use user manager -->
+@using Microsoft.AspNetCore.Identity
+@using startTemplate.Models;
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<!-- Page itself -->
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>INDEX</h1>
+<p>Welcome to my index page.</p>
+
+<a class="btn btn-info" href="/MyPages/Login"> Login </a>
+
+<a class="btn btn-info" href="/MyPages/CreateUser"> Create user </a>
