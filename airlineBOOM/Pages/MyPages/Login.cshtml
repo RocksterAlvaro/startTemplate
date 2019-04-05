@@ -1,0 +1,46 @@
+﻿@page
+@model LoginModel
+<!-- Allow me to use user manager -->
+@using Microsoft.AspNetCore.Identity
+@using airlineBOOM.Models;
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+<!-- Page itself -->
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <!-- If the user is signed in -->
+
+    <a href="/MyPages/dollar"> Dollar predictions </a>
+
+    <form method="POST">
+        <input type="submit" asp-page-handler="Logout" value="Logout" />
+    </form>
+}else
+{
+    <!-- If the user is not signed in -->
+
+    <h1>Login:</h1>
+
+    <form method="POST">
+        <div class="form-group">
+            <div>
+                Name:
+                <input asp-for="AppUser.UserName" />
+            </div>
+
+            <div>
+                "Not hash password":
+                <input type="password" asp-for="AppUser.Password" />
+            </div>
+        </div>
+
+        <input class="btn btn-default" type="submit" asp-page-handler="Login" value="Login" />
+</form>
+}
+
+<a class="btn btn-info" href="/MyPages/CreateUser"> Create user </a>
